@@ -16,7 +16,7 @@ MongoClient.connect(uri,{useNewUrlParser: true, useUnifiedTopology: true}, (err,
   }
   db = client.db('banco') // coloque o nome do seu DB
 
-  var server = app.listen(3000, function () {
+  var server = app.listen(3000 || process.env.PORT, function () {
     console.log("app running on port.", server.address().port);
   });
 })
